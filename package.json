@@ -32,5 +32,22 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "test project",
+  "main": "index.js",
+  "devDependencies": {
+    "gh-pages": "^2.2.0",
+    "node-sass": "^4.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DereviankoViacheslav/test-task-4Service.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DereviankoViacheslav/test-task-4Service/issues"
+  },
+  "homepage": "https://DereviankoViacheslav.github.io/test-task-4Service"
 }

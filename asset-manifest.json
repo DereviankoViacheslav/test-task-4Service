@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/test-task-4Service/static/css/main.0e7cc71e.chunk.css",
+    "main.js": "/test-task-4Service/static/js/main.abc0da4d.chunk.js",
+    "main.js.map": "/test-task-4Service/static/js/main.abc0da4d.chunk.js.map",
+    "runtime-main.js": "/test-task-4Service/static/js/runtime-main.08f3f3f6.js",
+    "runtime-main.js.map": "/test-task-4Service/static/js/runtime-main.08f3f3f6.js.map",
+    "static/js/2.6017274f.chunk.js": "/test-task-4Service/static/js/2.6017274f.chunk.js",
+    "static/js/2.6017274f.chunk.js.map": "/test-task-4Service/static/js/2.6017274f.chunk.js.map",
+    "index.html": "/test-task-4Service/index.html",
+    "precache-manifest.f6f2d398ebc6e8db4c19f8a235ac9a4e.js": "/test-task-4Service/precache-manifest.f6f2d398ebc6e8db4c19f8a235ac9a4e.js",
+    "service-worker.js": "/test-task-4Service/service-worker.js",
+    "static/css/main.0e7cc71e.chunk.css.map": "/test-task-4Service/static/css/main.0e7cc71e.chunk.css.map",
+    "static/js/2.6017274f.chunk.js.LICENSE.txt": "/test-task-4Service/static/js/2.6017274f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.08f3f3f6.js",
+    "static/js/2.6017274f.chunk.js",
+    "static/css/main.0e7cc71e.chunk.css",
+    "static/js/main.abc0da4d.chunk.js"
+  ]
+}

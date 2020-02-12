@@ -1,0 +1,2 @@
+(this["webpackJsonptest-task-4service"]=this["webpackJsonptest-task-4service"]||[]).push([[0],{3:function(e,t,n){e.exports=n(9)},8:function(e,t,n){},9:function(e,t,n){"use strict";n.r(t);var r=n(0),a=n.n(r),c=n(2),s=n.n(c);var u=function(){return a.a.createElement("div",null)};n(8);var i=function(){return a.a.createElement(u,null)};s.a.render(a.a.createElement(i,null),document.getElementById("root"))}},[[3,1,2]]]);
+//# sourceMappingURL=main.bc9b9783.chunk.js.map

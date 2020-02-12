@@ -1,0 +1,19 @@
+@import '../../styles.scss';
+
+.header {
+  height: 50px;
+  background-color: #e0e0e0;
+
+  @include for-large-up {
+    display: flex;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 25px;
+    background-color: #0083e9;
+  }
+}

@@ -1,0 +1,11 @@
+@import '../../styles.scss';
+
+.chart-answers {
+  width: 100%;
+
+  @include for-medium-up {
+    width: inherit;
+    flex-grow: 1;
+    margin-right: 15px;
+  }
+}

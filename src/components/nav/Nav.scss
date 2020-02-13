@@ -1,0 +1,42 @@
+@import '../../styles.scss';
+
+.nav {
+  background-color: #344750;
+  color: #99a2a6;
+
+  @include for-large-up {
+    min-width: 250px;
+  }
+
+  &__list-item {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    cursor: pointer;
+
+    &:first-child {
+      background-color: #ed448f;
+      color: #fff;
+
+      &:hover {
+        background-color: #f360a2;
+        color: #222;
+      }
+    }
+
+    &:hover {
+      background-color: #415a65;
+      color: #fff;
+    }
+  }
+
+  &__list-item-text {
+    display: none;
+    margin-left: 20px;
+
+    @include for-large-up {
+      display: inline;
+    }
+  }
+}

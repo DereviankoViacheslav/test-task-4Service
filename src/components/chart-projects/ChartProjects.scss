@@ -1,0 +1,10 @@
+@import '../../styles.scss';
+
+.chart-projects {
+  width: 100%;
+
+  @include for-medium-up {
+    width: inherit;
+    flex-grow: 2;
+  }
+}

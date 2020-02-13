@@ -1,9 +1,11 @@
 import React from 'react';
-// import './Header.scss';
+import './Header.scss';
 
 function Header() {
   return (
-    <div></div>
+    <header className="header">
+      <h3 className="header__title">Работа Мечты</h3>
+    </header>
   );
 }
 

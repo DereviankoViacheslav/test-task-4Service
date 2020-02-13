@@ -1,5 +1,5 @@
 import React from 'react';
-import { Line } from 'react-chartjs-2';
+// import { Line } from 'react-chartjs-2';
 import './ChartAnswers.scss';
 
 class ChartAnswers extends React.Component {
@@ -19,7 +19,7 @@ class ChartAnswers extends React.Component {
   render() {
     return (  
       <div className="chart-answers analytics__chart">
-        <Line ref={this.chart} data={this.state.chartData} height={150} width={300} />
+        {/* <Line ref={this.chart} data={this.state.chartData} height={150} width={300} /> */}
       </div>
     );
   }

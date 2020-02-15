@@ -1,42 +1,61 @@
 import React from 'react';
-import { Doughnut } from 'react-chartjs-2';
+import Chart from "react-apexcharts";
 import './ChartAnswers.scss';
 
 class ChartAnswers extends React.Component {
 
   state = {
     chartData: {
-      labels: ["Да", "Нет"],
-      datasets: [
-        {
-          label: 'Groups',
-          data: [500, 500],
-          backgroundColor: [
-            '#ff6700',
-            'yellow',
-          ],
-        }
-      ]
+      series: [50, 50],
+      options: {
+        plotOptions: {
+          pie: {
+            donut: {
+              size: '80%'
+            },
+            customScale: 0.95
+          }
+        },
+        dataLabels: {
+          enabled: false,
+        },
+        fill: {
+          colors: ['#ff6700', '#ffff00'],
+        },
+        tooltip: {
+          custom: function ({ series, seriesIndex }) {
+            return `
+            <div class="arrow_box">
+              <span>${series[seriesIndex]}</span>
+            </div>`;
+          },
+          theme: 'dark',
+        },
+        labels: ['Да', 'Нет'],
+        legend: {
+          position: 'right',
+          horizontalAlign: 'center',
+          offsetX: 0,
+          offsetY: 50,
+          labels: {
+            colors: ['#ff6700', '#ffff00'],
+          },
+          markers: {
+            fillColors: ['#ff6700', '#ffff00'],
+            radius: 0,
+          },
+        },
+      },
     }
   };
 
-  chart = React.createRef();
-
   render() {
     return (
-      <div className="chart-answers analytics__chart">
-        <Doughnut
-          ref={this.chart}
-          data={this.state.chartData}
-          // height={10}
-          width={1}
-          options={
-            {
-              maintainAspectRatio: false,
-              responsive: true,
-              legend: { position: 'right' }
-            }
-          }
+      <div className="analytics__chart chart-answers">
+        <Chart
+          options={this.state.chartData.options}
+          series={this.state.chartData.series}
+          type="donut"
         />
       </div>
     );

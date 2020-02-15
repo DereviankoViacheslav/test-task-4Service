@@ -1,6 +1,7 @@
 @import '../../styles/breakpoints.scss';
 
 .chart-projects {
+  height: 200px;
   width: 100%;
 
   @include for-medium-up {

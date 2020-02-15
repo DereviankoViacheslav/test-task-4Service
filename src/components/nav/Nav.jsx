@@ -21,7 +21,7 @@ function Nav() {
           <i className="far fa-calendar-check"></i>
           <span className="nav__list-item-text">Calendar</span>
         </li>
-        <li className="nav__list-item">
+        <li className="nav__list-item nav__list-item_active">
           <i className="fas fa-chart-line"></i>
           <span className="nav__list-item-text">Analytics</span>
         </li>

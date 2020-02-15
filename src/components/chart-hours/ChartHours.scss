@@ -2,5 +2,30 @@
 
 .chart-hours {
   width: 100%;
-  padding: 10px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    color: #344750;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    color: #99a2a6;
+  }
+
+  &__select-period {
+    color: #344750;
+    border: none;
+    outline: none;
+    background: #fff;
+  }
+}
+
+.arrow_box {
+  padding: 5px 10px;
+  background: #4c5e70;
 }

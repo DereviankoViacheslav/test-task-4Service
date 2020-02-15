@@ -3,10 +3,15 @@
 .analytics {
   flex-grow: 1;
   padding: 50px;
+  background-color: #eff3f6;
 
   &__title {
     padding-bottom: 20px;
     border-bottom: 2px solid #99a2a6;
+  }
+
+  &__greeting {
+    color: #344750;
   }
 
   &__subtitle {
@@ -15,16 +20,17 @@
   }
 
   &__chart {
+    padding: 10px;
     margin-top: 30px;
     background-color: #fff;
-    // ------
-    min-height: 150px;
-    border: 1px solid black;
-    // ------
   }
 
   &__bottom-chart-container {
     display: flex;
     flex-wrap: wrap;
+
+    @include for-medium-up {
+      flex-wrap: nowrap;
+    }
   }
 }

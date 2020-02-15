@@ -1,58 +1,154 @@
 import React from 'react';
-import { Line } from 'react-chartjs-2';
+import Chart from "react-apexcharts";
+import moment from 'moment';
 import './ChartHours.scss';
 
 class ChartHours extends React.Component {
 
-  fakeDateList = [
-    '01.01', '01.02', '01.03', '01.04', '01.05', '01.06', '01.07', '01.08', '01.09', '01.10', '01.11'
+  fakeData1 = [
+    { x: moment('2020-01-01').valueOf(), y: 50 },
+    { x: moment('2020-01-02').valueOf(), y: 40 },
+    { x: moment('2020-01-03').valueOf(), y: 52 },
+    { x: moment('2020-01-04').valueOf(), y: 43 },
+    { x: moment('2020-01-05').valueOf(), y: 33 },
+    { x: moment('2020-01-06').valueOf(), y: 52 },
+    { x: moment('2020-01-07').valueOf(), y: 31 },
+    { x: moment('2020-01-08').valueOf(), y: 43 },
+    { x: moment('2020-01-09').valueOf(), y: 33 },
+    { x: moment('2020-01-10').valueOf(), y: 52 }
   ];
 
-  fakeDataSet1 = [40, 50, 35, 50, 45, 40, 25, 35, 45, 53, 40, 48, 40, 53, 50];
-  fakeDataSet2 = [45, 25, 35, 45, 53, 40, 50, 43, 55, 42, 50, 42, 50, 44, 30];
+  fakeData2 = [
+    { x: moment('2020-01-01').valueOf(), y: 25 },
+    { x: moment('2020-01-02').valueOf(), y: 52 },
+    { x: moment('2020-01-03').valueOf(), y: 42 },
+    { x: moment('2020-01-04').valueOf(), y: 33 },
+    { x: moment('2020-01-05').valueOf(), y: 53 },
+    { x: moment('2020-01-06').valueOf(), y: 22 },
+    { x: moment('2020-01-07').valueOf(), y: 41 },
+    { x: moment('2020-01-08').valueOf(), y: 23 },
+    { x: moment('2020-01-09').valueOf(), y: 43 },
+    { x: moment('2020-01-10').valueOf(), y: 22 }
+  ];
 
   state = {
     chartData: {
-      labels: this.fakeDateList,
-      datasets: [
+      series: [
         {
-          label: 'Groups',
-          data: this.fakeDataSet1,
-          backgroundColor: ['rgb(248, 65, 141, 0.6)'],
-          pointBackgroundColor: ['rgb(255, 255, 255, 1)'],
-          borderWidth: 0,
-          pointRadius: 0,
-          xAxisID: 0,
-          yAxisID: 0
+          name: 'series1',
+          data: this.fakeData1,
         },
         {
-          label: 'Groups2',
-          data: this.fakeDataSet2,
-          backgroundColor: [ 'rgb(221, 166, 225, 0.6)'],
-          pointBackgroundColor: ['rgb(255, 255, 255, 1)',
-          ],
-          borderWidth: 0,
-          pointRadius: 0,
-          xAxisID: 0,
-          yAxisID: 0
+          name: 'series2',
+          data: this.fakeData2,
         }
-      ]
+      ],
+      options: {
+        markers: {
+          size: 0,
+          colors: ['#fff'],
+          strokeColors: '#4c5e70',
+          strokeWidth: 3,
+          hover: {
+            sizeOffset: 5
+          }
+        },
+        chart: {
+          parentHeightOffset: 10,
+          toolbar: {
+            show: false,
+          },
+        },
+        legend: {
+          show: false,
+        },
+        dataLabels: {
+          enabled: false
+        },
+        stroke: {
+          show: false,
+        },
+        yaxis: {
+          min: 0,
+          max: 60,
+          tickAmount: 6,
+        },
+        xaxis: {
+          type: 'datetime',
+          labels: {
+            format: 'MM.dd',
+          },
+          axisBorder: {
+            show: false,
+          },
+          crosshairs: {
+            show: false,
+          },
+          axisTicks: {
+            show: false,
+          },
+          min: this.fakeData1[0].x,
+          tooltip: {
+            enabled: false,
+          },
+        },
+        tooltip: {
+          enabled: true,
+          shared: false,
+          intersect: false,
+          inverseOrder: false,
+          custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+            return `
+            <div class="arrow_box">
+              <span>${series[seriesIndex][dataPointIndex]}</span>
+            </div>`;
+          },
+          theme: 'dark',
+          style: {
+            fontSize: '14px',
+          },
+          x: {
+            show: false,
+          },
+          y: {
+            show: false,
+          },
+          marker: {
+            show: true,
+          },
+          items: {
+            display: 'flex',
+          },
+        },
+        fill: {
+          type: 'solid',
+          opacity: .8,
+          colors: ['#f8418d', '#dda6e1'],
+        },
+      },
     },
   };
 
   render() {
     return (
-      <div className="analytics__chart chart-hours">
-        <Line
-          ref={this.chart}
-          data={this.state.chartData}
+      <div id="chart" className="analytics__chart chart-hours">
+        <div className="chart-hours__header">
+          <div>
+            <div className="chart-hours__title">Wavy Lines</div>
+            <span className="chart-hours__subtitle">Working Hours</span>
+          </div>
+          <select className="chart-hours__select-period" name="period" id="chart-period">
+            <option value="this-week">THIS WEEK</option>
+            <option value="this-month">THIS MONTH</option>
+            <option value="this-year">THIS YEAR</option>
+          </select>
+        </div>
+        <Chart
+          options={this.state.chartData.options}
+          series={this.state.chartData.series}
+          type="area"
           height={250}
-          options={
-            {
-              maintainAspectRatio: false,
-              responsive: true
-            }
-          }
+          width="98%"
         />
       </div>
     );

@@ -2,8 +2,12 @@
 
 .analytics {
   flex-grow: 1;
-  padding: 50px;
+  padding: 25px 15px;
   background-color: #eff3f6;
+
+  @include for-medium-up {
+    padding: 50px;
+  }
 
   &__title {
     padding-bottom: 20px;

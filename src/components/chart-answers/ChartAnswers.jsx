@@ -34,7 +34,6 @@ class ChartAnswers extends React.Component {
         labels: ['Да', 'Нет'],
         legend: {
           position: 'right',
-          horizontalAlign: 'center',
           offsetX: 0,
           offsetY: 50,
           labels: {
@@ -45,6 +44,21 @@ class ChartAnswers extends React.Component {
             radius: 0,
           },
         },
+        responsive: [
+          {
+            breakpoint: 480,
+            options: {
+              chart: {
+                width: '100%'
+              },
+              legend: {
+                position: 'bottom',
+                offsetX: -10,
+                offsetY: 0,
+              }
+            }
+          }
+        ],
       },
     }
   };

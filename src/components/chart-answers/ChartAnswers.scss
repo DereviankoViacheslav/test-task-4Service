@@ -1,22 +1,26 @@
 @import '../../styles/breakpoints.scss';
 
-
 .chart-answers  .apexcharts-canvas {
   background-image: url('./kon.png');
   background-repeat: no-repeat;
-  background-position: 32% 50%;
-  background-size: 35%;
+  background-position: 52% 35%;
+  background-size: 25%;
+  
+  @include for-small-up {
+    background-position: 32% 50%;
+    background-size: 35%;
+  }
 }
 
 .chart-answers {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
   width: 100%;
   padding: 10px;
-
+  
   @include for-medium-up {
+    height: 200px;
     width: inherit;
     max-width: 300px;
     flex-grow: 1;

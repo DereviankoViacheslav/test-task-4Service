@@ -125,6 +125,18 @@ class ChartHours extends React.Component {
           opacity: .8,
           colors: ['#f8418d', '#dda6e1'],
         },
+        responsive: [
+          {
+            breakpoint: 480,
+            options: {
+              xaxis: {
+                labels: {
+                  offsetX: 15,
+                },
+              }
+            }
+          }
+        ],
       },
     },
   };
